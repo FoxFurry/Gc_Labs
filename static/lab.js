@@ -339,7 +339,7 @@ var Sphere = function() {
     var v3 = vec4( 0.0, 0.0, -l, 1.0 );
     var v4 = vec4( -l, 0.0, 0.0, 1.0 );
     var v5 = vec4( 0.0, -l, 0.0, 1.0 );
-    var steps = 3;
+    var steps = 4;
 
     this.divideTriangle( v0, v1, v2, steps );
     this.divideTriangle( v0, v2, v3, steps );
