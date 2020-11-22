@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+<div class="row">
+    <div class="column column-full-screen left">
+        <canvas class="canvas"></canvas>
+    </div>
+    <div class="column column-full-screen right ui-side">
+
+        <div class="row camera-component component-value camera on-change-camera">
+            <div class="component-name">
+                <p>Camera</p>
+            </div>
+            <div class="row">
+
+                <label class="field-name label-column component-single-field">Position</label>
+                <div class="field-value component-single-field position">
+                    <div class="vector3-field">
+                        <label class="label-column">X: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">Y: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">Z: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Rotation</label>
+                <div class="field-value component-single-field rotation">
+                    <div class="vector3-field">
+                        <label class="label-column">X: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">Y: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">Z: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">FOV</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float fov"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Near Z</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float z-near"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Far Z</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float z-far"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Am. color</label>
+                <div class="field-value component-single-field scale">
+                    <div class="vector3-field">
+                        <label class="label-column">R: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">G: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">B: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row light-source-component component-value first-light-source on-change-first-light">
+            <div class="component-name">
+                <p>Light #1</p>
+            </div>
+            <div class="row">
+
+                <label class="field-name label-column component-single-field">Position</label>
+                <div class="field-value component-single-field position">
+                    <div class="vector3-field">
+                        <label class="label-column">X: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">Y: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">Z: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Color</label>
+                <div class="field-value component-single-field rotation">
+                    <div class="vector3-field">
+                        <label class="label-column">R: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">G: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">B: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Intensity</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float shininess"
+                               type="number" value="0.0" step="1" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Attenuation</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float attenuation"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row light-source-component component-value second-light-source on-change-second-light">
+            <div class="component-name">
+                <p>Light #2</p>
+            </div>
+            <div class="row">
+
+                <label class="field-name label-column component-single-field">Position</label>
+                <div class="field-value component-single-field position">
+                    <div class="vector3-field">
+                        <label class="label-column">X: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">Y: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">Z: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Color</label>
+                <div class="field-value component-single-field rotation">
+                    <div class="vector3-field">
+                        <label class="label-column">R: </label>
+                        <input class="input-column input-vector3 vector3-x"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+
+                    <div class="vector3-field">
+                        <label class="label-column">G: </label>
+                        <input class="input-column input-vector3 vector3-y"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                    <div class="vector3-field">
+                        <label class="label-column">B: </label>
+                        <input class="input-column input-vector3 vector3-z"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Intensity</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float shininess"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+                <label class="field-name label-column component-single-field">Attenuation</label>
+                <div class="field-value component-single-field">
+                    <div class="float-field">
+                        <input class="input-column input-float attenuation"
+                               type="number" value="0.0" step="0.01" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row hierarchy-component component-value">
+            <div class="component-name hierarchy-add-element">
+                <p>Objects</p>
+            </div>
+            <div class="row hierarchy">
+                <div class="hierarchy-link">
+
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="hierarchy-button hierarchy-button-plus create-object-dropdown" type="button">
+                    Add
+                </button>
+                <button class="hierarchy-button hierarchy-button-minus" type="button">
+                    Delete
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="create-cube">Cube</a>
+                    <a href="#" class="create-cone">Cone</a>
+                    <a href="#" class="create-sphere">Sphere</a>
+                    <a href='#' class="create-mesh">Obj File</a>
+                    <input class="upload-mesh" type='file' />
+                </div>
+            </div>
+        </div>
+        <div class="hideable-components on-change-transform">
+            <div class="row transform-component component-value transform">
+                <div class="component-name">
+                    <p>Transform</p>
+                </div>
+                <div class="row">
+
+                    <label class="field-name label-column component-single-field">Position</label>
+                    <div class="field-value component-single-field position">
+                        <div class="vector3-field">
+                            <label class="label-column">X: </label>
+                            <input class="input-column input-vector3 vector3-x"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+
+                        <div class="vector3-field">
+                            <label class="label-column">Y: </label>
+                            <input class="input-column input-vector3 vector3-y"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+                        <div class="vector3-field">
+                            <label class="label-column">Z: </label>
+                            <input class="input-column input-vector3 vector3-z"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+                    </div>
+
+                    <label class="field-name label-column component-single-field">Rotation</label>
+                    <div class="field-value component-single-field rotation">
+                        <div class="vector3-field">
+                            <label class="label-column">X: </label>
+                            <input class="input-column input-vector3 vector3-x"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+
+                        <div class="vector3-field">
+                            <label class="label-column">Y: </label>
+                            <input class="input-column input-vector3 vector3-y"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+                        <div class="vector3-field">
+                            <label class="label-column">Z: </label>
+                            <input class="input-column input-vector3 vector3-z"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+                    </div>
+
+                    <label class="field-name label-column component-single-field">Scale</label>
+                    <div class="field-value component-single-field scale">
+                        <div class="vector3-field">
+                            <label class="label-column">X: </label>
+                            <input class="input-column input-vector3 vector3-x"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+
+                        <div class="vector3-field">
+                            <label class="label-column">Y: </label>
+                            <input class="input-column input-vector3 vector3-y"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+                        <div class="vector3-field">
+                            <label class="label-column">Z: </label>
+                            <input class="input-column input-vector3 vector3-z"
+                                   type="number" value="0.0" step="0.01" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hideable-components">
+            <div class="row transform-component component-value renderer">
+                <div class="component-name">
+                    <p>Render</p>
+                </div>
+                <div class="row">
+
+                    <label class="field-name label-column component-single-field">Texture</label>
+                    <div class="field-value component-single-field">
+                        <div class="float-field">
+                            <input class="input-column input-float texture-add"
+                                   type="file" accept="image/png, .jpeg, .jpg, image/gif" />
+                        </div>
+                    </div>
+                    <div>
+                        <button class="hierarchy-button texture-remove" type="button">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <label class="field-name label-column component-single-field">TextureSource</label>
+                    <div class="field-value component-single-field">
+                        <div class="float-field">
+                            <input class="input-column input-float texture-source"
+                                   type="text" readonly />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script  id="vertex-shader-3d" type="x-shader/x-vertex">
+    attribute vec4 a_position;
+    attribute vec4 a_color;
+    attribute vec3 a_normal;
+    attribute vec2 a_texcoord;
+
+    uniform mat4 u_matrix;
+    uniform mat4 u_world;
+    uniform mat4 u_worldInverse;
+
+    varying vec4 v_color;
+    varying vec3 v_normal;
+    varying vec4 v_position;
+
+    varying vec3 v_vertex;
+
+    varying vec2 v_texcoord;
+
+    void main() {
+        gl_Position = u_matrix * a_position;
+
+        v_normal = mat3(u_worldInverse) * a_normal;
+        v_vertex = (u_world * a_position).xyz;
+        v_color = a_color;
+        v_position = a_position;
+        v_texcoord = a_texcoord;
+    }
+</script>
+
+<script  id="fragment-shader-3d" type="x-shader/x-fragment">
+    precision mediump float;
+
+    uniform float u_lightMult;
+
+    uniform vec3 u_firstLightPosition;
+    uniform vec3 u_firstLightColor;
+    uniform float u_firstLightShininess;
+    uniform float u_firstLightAttenuation;
+
+    uniform vec3 u_secondLightPosition;
+    uniform vec3 u_secondLightColor;
+    uniform float u_secondLightShininess;
+    uniform float u_secondLightAttenuation;
+
+    uniform vec3 u_ambientColor;
+
+    uniform sampler2D u_texture;
+
+    varying vec4 v_color;
+    varying vec3 v_normal;
+    varying vec3 v_vertex;
+    varying vec2 v_texcoord;
+
+    vec3 lightCalculation(vec3 normal,
+                        vec3 position,
+                        vec3 color,
+                        float shininess,
+                        float attenuation) {
+
+        vec3 lightDirection = position - v_vertex;
+        float lightDistance = length(lightDirection);
+        lightDirection = normalize(lightDirection);
+
+        float diffuseValue = dot(normal, lightDirection);
+        diffuseValue = clamp(diffuseValue, 0.0, 1.0);
+
+        vec3 diffuseColor = vec3(v_color) * diffuseValue * color;
+
+        vec3 refl = 2.0 * dot(normal, lightDirection) * normal - lightDirection;
+        refl = normalize(refl);
+
+        vec3 cameraDirection = -1.0 * v_vertex;
+        cameraDirection = normalize(cameraDirection);
+
+        float specularValue = dot(refl, cameraDirection);
+        specularValue = clamp(specularValue, 0.0, 1.0);
+        specularValue = pow(specularValue, shininess);
+
+        vec3 specularColor = color * specularValue;
+
+        float att = 1.0 / (1.0 + attenuation * lightDistance);
+
+        vec3 returnColor = att * (diffuseColor + specularColor);
+        returnColor = clamp(returnColor, 0.0, 1.0);
+
+        return returnColor;
+    }
+
+    void main() {
+        vec3 ambientColor = u_ambientColor * vec3(v_color);
+
+        vec3 normal = normalize(v_normal);
+
+        vec3 firstColorLight = lightCalculation(normal,
+        u_firstLightPosition,
+        u_firstLightColor,
+        u_firstLightShininess,
+        u_firstLightAttenuation);
+
+        vec3 secondColorLight = lightCalculation(normal,
+        u_secondLightPosition,
+        u_secondLightColor,
+        u_secondLightShininess,
+        u_secondLightAttenuation);
+
+        vec3 light = ambientColor + firstColorLight + secondColorLight;
+        light = mix(vec3(v_color), light, u_lightMult);
+        vec4 color = vec4(light, v_color.a);
+
+        gl_FragColor = texture2D(u_texture, v_texcoord) * color;
+    }
+</script>
+
+<script src="script/utils.js"></script>
+<script src="script/object.js"></script>
+<script src="script/vector3.js"></script>
+<script src="script/matrix4.js"></script>
+<script src="script/shapesData.js"></script>
+<script src="script/meshData.js"></script>
+<script src="script/canvasCont.js"></script>
+<script src="script/ui.js"></script>
+
+</body>
+</html>
